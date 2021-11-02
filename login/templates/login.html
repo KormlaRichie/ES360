@@ -1,0 +1,44 @@
+{% extends 'welcome.html' %} 
+ 
+{% block title%} Login{%endblock title%} 
+
+{%block content%}
+
+  <div class= "login-box" id="login">
+    <h3 class="text-center text-white pt-5">Organic Health Care Management System</h3>
+    <div class="container">
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+          <form method = POST>
+              {% comment %} User Log in Form {% endcomment %}
+              <div id ="login-form" class= "form text-info">
+
+                  <h3 class="text-center text-info"z>Login</h3>
+              {% csrf_token %}
+              {{form}}
+              </div>
+            
+              <div class="form-group">
+                <label for="remember-me" class="text-info"
+                  ><span>Remember me</span> <span
+                    ><input
+                      id="remember-me"
+                      name="remember-me"
+                      type="checkbox" /></span></label
+                ><br />
+                <input
+                  type="submit"
+                  name="submit"
+                  class="btn btn-info btn-md"
+                  value="submit"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content%}
